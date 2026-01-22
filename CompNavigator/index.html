@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Comp Navigator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Comp Navigator</h1>
+        <div class="header-buttons">
+            <button id="licBtn" title="License">Lic</button>
+            <button id="refreshBtn" title="Refresh">Ref</button>
+        </div>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="searchBox" placeholder="Search compositions...">
+        <button id="clearSearchBtn">X</button>
+    </div>
+
+    <div class="tree-container" id="treeContainer">
+        <div class="empty-state">No compositions in project</div>
+    </div>
+
+    <div class="details-panel hidden" id="detailsPanel">
+        <div class="prop-group">
+            <label>Name</label>
+            <div class="prop-row">
+                <input type="text" id="compNameInput" class="prop-input">
+                <button id="renameBtn" class="prop-button">Rename</button>
+            </div>
+        </div>
+        <div class="prop-group">
+            <label>Resolution</label>
+            <div class="prop-row">
+                <input type="number" id="widthInput" class="prop-input-half" placeholder="Width">
+                <span class="prop-separator">×</span>
+                <input type="number" id="heightInput" class="prop-input-half" placeholder="Height">
+            </div>
+            <button id="applyResBtn" class="prop-button-full">Apply Resolution</button>
+        </div>
+        <div class="prop-group">
+            <label>Frame Rate</label>
+            <div class="prop-row">
+                <input type="number" id="fpsInput" class="prop-input" placeholder="fps" step="0.01">
+                <button id="applyFpsBtn" class="prop-button">Apply</button>
+            </div>
+        </div>
+        <div class="prop-group">
+            <label>Info</label>
+            <div class="prop-info" id="compInfo"></div>
+        </div>
+    </div>
+
+    <div class="info-panel">
+        <div class="current-comp">
+            <span class="current-comp-label">Active:</span>
+            <span class="current-comp-name" id="currentCompName">None</span>
+        </div>
+        <div class="action-buttons">
+            <button id="openBtn" disabled>Open</button>
+            <button id="upBtn" disabled>Up</button>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <span id="statusText">Ready</span>
+    </div>
+
+    <div id="licenseDialog" class="dialog-overlay hidden">
+        <div class="dialog">
+            <h2>Comp Navigator - Activation</h2>
+            <div class="dialog-field">
+                <label for="emailInput">Email:</label>
+                <input type="email" id="emailInput" placeholder="your@email.com">
+            </div>
+            <div class="dialog-field">
+                <label for="keyInput">License Key:</label>
+                <input type="text" id="keyInput" placeholder="CN-XXXX-XXXX-XXXX">
+            </div>
+            <div class="dialog-error" id="dialogError"></div>
+            <div class="dialog-buttons">
+                <button id="buyBtn">Buy</button>
+                <button id="clearLicBtn">Clear License</button>
+                <button id="activateBtn">Activate</button>
+                <button id="cancelBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/CSInterface.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
